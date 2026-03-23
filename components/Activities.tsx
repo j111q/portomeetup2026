@@ -158,7 +158,7 @@ export default function Activities({ currentUser }: { currentUser: string }) {
       )}
 
       {/* Quick start suggestions */}
-      {activities.length === 0 && !showForm && (
+      {!showForm && (
         <div className="mb-6">
           <p className="text-xs text-porto-black/40 font-medium uppercase tracking-wide mb-3">Beautifully timed detours</p>
           <div className="flex flex-wrap gap-2">
