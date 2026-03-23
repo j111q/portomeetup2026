@@ -15,7 +15,7 @@ export default function NamePrompt({
         <p className="text-xs font-bold uppercase tracking-wide text-[#5378FF] mb-2">Welcome to Design Meetup 2026</p>
         <h2 className="text-2xl font-black mb-1">You made it out of Figma</h2>
         <p className="text-porto-black/50 mb-6 text-sm leading-relaxed">
-          Everything happening at the meetup, minus the "can everyone see my screen?" part.
+          Your schedule, snack swap map, and side quests — all in one place. Built with AI, tested by humans with opinions.
         </p>
         <form
           onSubmit={(e) => {
