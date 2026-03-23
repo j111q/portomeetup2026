@@ -103,8 +103,8 @@ export default function ActivityCard({
         </div>
       )}
 
-      <div className="mt-3 flex items-center justify-between">
-        <div>
+      <div className="mt-3">
+        <div className="flex items-center gap-3">
           {isPast ? (
             <span className="text-xs text-porto-black/30 font-medium">This activity has ended</span>
           ) : isCreator ? (
@@ -133,16 +133,11 @@ export default function ActivityCard({
         {!isPast && (
           <button
             onClick={() => alert('Slack integration coming soon!')}
-            className="flex items-center gap-1.5 text-xs text-porto-black/35 hover:text-porto-black/60 transition-colors"
+            className="flex items-center gap-1.5 text-xs text-porto-black/30 hover:text-porto-black/50 transition-colors mt-2"
             title="Share to #design-meetup-watercooler"
           >
-            <svg width="14" height="14" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M19.7 43.3c0 2.8-2.3 5.1-5.1 5.1s-5.1-2.3-5.1-5.1 2.3-5.1 5.1-5.1h5.1v5.1zm2.6 0c0-2.8 2.3-5.1 5.1-5.1s5.1 2.3 5.1 5.1v12.8c0 2.8-2.3 5.1-5.1 5.1s-5.1-2.3-5.1-5.1V43.3z" fill="#E01E5A"/>
-              <path d="M27.4 19.7c-2.8 0-5.1-2.3-5.1-5.1s2.3-5.1 5.1-5.1 5.1 2.3 5.1 5.1v5.1h-5.1zm0 2.6c2.8 0 5.1 2.3 5.1 5.1s-2.3 5.1-5.1 5.1H14.6c-2.8 0-5.1-2.3-5.1-5.1s2.3-5.1 5.1-5.1h12.8z" fill="#36C5F0"/>
-              <path d="M51 27.4c0-2.8-2.3-5.1-5.1-5.1s-5.1 2.3-5.1 5.1 2.3 5.1 5.1 5.1H51v-5.1zm-2.6 0c0 2.8-2.3 5.1-5.1 5.1s-5.1-2.3-5.1-5.1V14.6c0-2.8 2.3-5.1 5.1-5.1s5.1 2.3 5.1 5.1v12.8z" fill="#2EB67D"/>
-              <path d="M27.4 51c2.8 0 5.1-2.3 5.1-5.1s-2.3-5.1-5.1-5.1-5.1 2.3-5.1 5.1v5.1h5.1zm0-2.6c-2.8 0-5.1-2.3-5.1-5.1s2.3-5.1 5.1-5.1h12.8c2.8 0 5.1 2.3 5.1 5.1s-2.3 5.1-5.1 5.1H27.4z" fill="#ECB22E"/>
-            </svg>
-            <span>Share to #design-meetup-watercooler</span>
+            <img src="https://cdn.brandfetch.io/idH0GrC11a/w/28/h/28/theme/dark/icon.jpeg" alt="Slack" width={14} height={14} className="rounded-sm shrink-0" />
+            <span>Share to Slack</span>
           </button>
         )}
       </div>
