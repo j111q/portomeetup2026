@@ -91,7 +91,7 @@ export default function Activities({ currentUser }: { currentUser: string }) {
         <h2 className="text-xl font-black">Activities</h2>
         <button
           onClick={() => setShowForm(!showForm)}
-          className="bg-porto-red text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-porto-red/90 transition-colors"
+          className="bg-[#5378FF] text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-[#5378FF]/90 transition-colors"
         >
           {showForm ? 'Cancel' : '+ Add side quest'}
         </button>
@@ -128,7 +128,7 @@ export default function Activities({ currentUser }: { currentUser: string }) {
                   }}
                   className={`px-3 py-1.5 rounded-lg text-sm border font-medium transition-colors ${
                     quickTime === min
-                      ? 'bg-porto-red text-white border-porto-red'
+                      ? 'bg-[#5378FF] text-white border-[#5378FF]'
                       : 'border-porto-black/50 hover:bg-porto-black/5'
                   }`}
                 >
@@ -150,7 +150,7 @@ export default function Activities({ currentUser }: { currentUser: string }) {
           <button
             type="submit"
             disabled={!title.trim() || (!startsAt && quickTime === null)}
-            className="bg-porto-red text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-porto-red/90 disabled:opacity-40 transition-colors"
+            className="bg-[#5378FF] text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-[#5378FF]/90 disabled:opacity-40 transition-colors"
           >
             Add this side quest
           </button>

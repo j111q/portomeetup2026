@@ -219,7 +219,7 @@ export default function SnackExchange({ currentUser }: { currentUser: string }) 
         <h2 className="text-xl font-black">Snack Exchange</h2>
         <button
           onClick={() => setShowForm(!showForm)}
-          className="bg-porto-red text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-porto-red/90 transition-colors"
+          className="bg-[#5378FF] text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-[#5378FF]/90 transition-colors"
         >
           {showForm ? 'Cancel' : '+ Add snack'}
         </button>

@@ -124,7 +124,7 @@ export default function ActivityCard({
           ) : (
             <button
               onClick={() => onJoin(activity.id)}
-              className="bg-porto-red text-white px-4 py-1.5 rounded-lg text-sm font-bold hover:bg-porto-red/90 transition-colors"
+              className="bg-[#5378FF] text-white px-4 py-1.5 rounded-lg text-sm font-bold hover:bg-[#5378FF]/90 transition-colors"
             >
               I'm into this
             </button>
