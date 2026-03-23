@@ -8,8 +8,8 @@ export async function POST(
   const body = await req.json()
   const { id } = params
   const activity = body.leave
-    ? leaveActivity(id, body.name)
-    : joinActivity(id, body.name)
+    ? await leaveActivity(id, body.name)
+    : await joinActivity(id, body.name)
   if (!activity) return NextResponse.json({ error: 'Not found' }, { status: 404 })
   return NextResponse.json(activity)
 }

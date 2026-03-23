@@ -2,12 +2,12 @@ import { NextResponse } from 'next/server'
 import { getActivities, addActivity, deleteActivity } from '@/lib/store'
 
 export async function GET() {
-  return NextResponse.json(getActivities())
+  return NextResponse.json(await getActivities())
 }
 
 export async function POST(req: Request) {
   const body = await req.json()
-  const activity = addActivity({
+  const activity = await addActivity({
     title: body.title,
     description: body.description || '',
     createdBy: body.createdBy,
@@ -18,7 +18,7 @@ export async function POST(req: Request) {
 
 export async function DELETE(req: Request) {
   const { id } = await req.json()
-  const ok = deleteActivity(id)
+  const ok = await deleteActivity(id)
   if (!ok) return NextResponse.json({ error: 'Not found' }, { status: 404 })
   return NextResponse.json({ ok: true })
 }
