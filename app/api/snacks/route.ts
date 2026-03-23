@@ -1,24 +1,28 @@
 import { NextResponse } from 'next/server'
-import { getActivities, addActivity, deleteActivity } from '@/lib/store'
+import { getSnacks, addSnack, deleteSnack } from '@/lib/store'
 
 export async function GET() {
-  return NextResponse.json(getActivities())
+  return NextResponse.json(getSnacks())
 }
 
 export async function POST(req: Request) {
   const body = await req.json()
-  const activity = addActivity({
-    title: body.title,
+  const snack = addSnack({
+    name: body.name,
     description: body.description || '',
-    createdBy: body.createdBy,
-    startsAt: body.startsAt,
+    location: body.location,
+    country: body.country || '',
+    lat: body.lat,
+    lng: body.lng,
+    dataUrl: body.dataUrl,
+    broughtBy: body.broughtBy,
   })
-  return NextResponse.json(activity, { status: 201 })
+  return NextResponse.json(snack, { status: 201 })
 }
 
 export async function DELETE(req: Request) {
   const { id } = await req.json()
-  const ok = deleteActivity(id)
+  const ok = deleteSnack(id)
   if (!ok) return NextResponse.json({ error: 'Not found' }, { status: 404 })
   return NextResponse.json({ ok: true })
 }
