@@ -4,11 +4,10 @@ import { useState, useEffect } from 'react'
 import NamePrompt from '@/components/NamePrompt'
 import Agenda from '@/components/Agenda'
 import Activities from '@/components/Activities'
-import PhotoWall from '@/components/PhotoWall'
 import SnackExchange from '@/components/SnackExchange'
 import Avatar from '@/components/Avatar'
 
-const TABS = ['Agenda', 'Activities', 'Snacks', 'Photos'] as const
+const TABS = ['Agenda', 'Activities', 'Snacks'] as const
 type Tab = (typeof TABS)[number]
 
 export default function Home() {
@@ -69,7 +68,6 @@ export default function Home() {
         {tab === 'Agenda' && <Agenda />}
         {tab === 'Activities' && name && <Activities currentUser={name} />}
         {tab === 'Snacks' && name && <SnackExchange currentUser={name} />}
-        {tab === 'Photos' && name && <PhotoWall currentUser={name} />}
       </div>
 
       {/* Footer */}
