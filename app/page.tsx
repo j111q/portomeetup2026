@@ -31,7 +31,13 @@ export default function Home() {
     setName(null)
   }
 
-  if (!loaded) return null
+  if (!loaded) return (
+    <div className="min-h-screen flex items-center justify-center">
+      <svg className="animate-spin h-8 w-8" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="10" stroke="#E53312" strokeWidth="3" strokeLinecap="round" strokeDasharray="31.4 31.4" />
+      </svg>
+    </div>
+  )
 
   return (
     <>
