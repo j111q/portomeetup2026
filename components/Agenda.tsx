@@ -30,6 +30,7 @@ const FUN_MESSAGES = [
 
 export default function Agenda() {
   const [items, setItems] = useState<AgendaItem[]>([])
+  const [loading, setLoading] = useState(true)
   const [now, setNow] = useState(new Date())
   const [markerVisible, setMarkerVisible] = useState(true)
   const [markerAbove, setMarkerAbove] = useState(false)
@@ -58,6 +59,7 @@ export default function Agenda() {
   const fetchItems = useCallback(async () => {
     const res = await fetch('/api/agenda')
     setItems(await res.json())
+    setLoading(false)
   }, [])
 
   useEffect(() => {
@@ -122,7 +124,24 @@ export default function Agenda() {
       </div>
       <p className="text-xs text-porto-black/40 mb-5">Everything happening, neatly stacked like layers should be</p>
 
-      {items.length === 0 ? (
+      {loading ? (
+        <div className="space-y-3">
+          {[1, 2, 3, 4, 5].map((i) => (
+            <div key={i} className="rounded-xl border border-porto-black/5 p-4 animate-pulse">
+              <div className="flex gap-3">
+                <div className="w-16 space-y-1.5">
+                  <div className="h-3 bg-gray-200 rounded w-12" />
+                  <div className="h-3 bg-gray-100 rounded w-10" />
+                </div>
+                <div className="flex-1 space-y-2">
+                  <div className="h-4 bg-gray-200 rounded w-3/4" />
+                  <div className="h-3 bg-gray-100 rounded w-1/2" />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      ) : items.length === 0 ? (
         <div className="text-center py-12 text-porto-black/30">
           <p className="text-4xl mb-2">📋</p>
           <p>No agenda items yet. Add the first one!</p>

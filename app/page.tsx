@@ -32,11 +32,37 @@ export default function Home() {
   }
 
   if (!loaded) return (
-    <div className="min-h-screen flex items-center justify-center">
-      <svg className="animate-spin h-8 w-8" viewBox="0 0 24 24" fill="none">
-        <circle cx="12" cy="12" r="10" stroke="#E53312" strokeWidth="3" strokeLinecap="round" strokeDasharray="31.4 31.4" />
-      </svg>
-    </div>
+    <>
+      {/* Header skeleton */}
+      <div className="bg-[#5378FF]">
+        <div className="w-full max-w-4xl mx-auto h-48 sm:h-64" />
+      </div>
+      <div className="max-w-2xl mx-auto px-4 py-6">
+        {/* Tab skeleton */}
+        <div className="flex gap-1 bg-gray-100 rounded-lg p-1 mb-6">
+          {['', '', ''].map((_, i) => (
+            <div key={i} className="flex-1 py-2 px-3 rounded-md bg-gray-200/50 animate-pulse h-9" />
+          ))}
+        </div>
+        {/* Card skeletons */}
+        <div className="space-y-3">
+          {[1, 2, 3, 4, 5].map((i) => (
+            <div key={i} className="rounded-xl border border-porto-black/5 p-4 animate-pulse">
+              <div className="flex gap-3">
+                <div className="w-16 space-y-1.5">
+                  <div className="h-3 bg-gray-200 rounded w-12" />
+                  <div className="h-3 bg-gray-100 rounded w-10" />
+                </div>
+                <div className="flex-1 space-y-2">
+                  <div className="h-4 bg-gray-200 rounded w-3/4" />
+                  <div className="h-3 bg-gray-100 rounded w-1/2" />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
   )
 
   return (
